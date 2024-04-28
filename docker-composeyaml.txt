@@ -1,19 +1,26 @@
-version '3'
+version: '3'
 
-services
-  jenkins
-    image jenkinsjenkinslts
-    container_name jenkins
-    ports
+services:
+  jenkins:
+    image: jenkinsjenkinslts
+    container_name: jenkins
+    ports:
       - 80808080
       - 5000050000
-    volumes
+    volumes:
       - jenkins_homevarjenkins_home
     networks
       - jenkins-net
+  remote_host:
+    image: remote_host
+    container_name: remote_host
+    build:
+      context: centos7
+    networks:
+      - net
 
-networks
-  jenkins-net
+networks:
+  jenkins-net:
 
-volumes
+volumes:
   jenkins_home
