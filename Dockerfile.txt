@@ -16,3 +16,4 @@ RUN /usr/sbin/sshd-keygen
 
 CMD /usr/sbin/sshd -D
 d
+p
